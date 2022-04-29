@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="TOP_CENTER" prefHeight="480.0" prefWidth="640.0" spacing="20.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.uf4.ActorsController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <HBox alignment="CENTER" prefHeight="76.0" prefWidth="600.0" style="-fx-spacing: 30px;">
+      <children>
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nom: ">
+            <HBox.margin>
+               <Insets left="10.0" top="3.0" />
+            </HBox.margin>
+         </Text>
+         <TextField fx:id="pelis" alignment="CENTER_RIGHT" />
+         <Button mnemonicParsing="false" onAction="#buscarPeli" text="Cerca" />
+         <Pane prefHeight="25.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+         <Button fx:id="btactors" alignment="CENTER" mnemonicParsing="false" onAction="#onactorsbuttonclick" prefHeight="61.0" prefWidth="61.0" style="-fx-background-radius: 5em;">
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets>
+            <graphic>
+               <ImageView fitHeight="35.0" fitWidth="35.0" nodeOrientation="INHERIT" pickOnBounds="true">
+                  <image>
+                     <Image url="@user.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+         </Button>
+      </children>
+   </HBox>
+   <TableView fx:id="tableMovie" prefHeight="277.0" prefWidth="600.0">
+     <columns>
+       <TableColumn fx:id="colIDMovie" prefWidth="41.0" text="id" />
+       <TableColumn fx:id="colTitleMovie" prefWidth="193.0" text="title" />
+         <TableColumn fx:id="colSinopsisMovie" prefWidth="365.0" text="synopsis" />
+     </columns>
+   </TableView>
+   <HBox alignment="CENTER_RIGHT" prefHeight="92.0" prefWidth="558.0">
+      <children>
+         <Button fx:id="btndeletemovie" alignment="CENTER" mnemonicParsing="false" onAction="#ondeletemovie" prefHeight="61.0" prefWidth="61.0" style="-fx-background-radius: 5em;">
+            <graphic>
+               <ImageView fitHeight="35.0" fitWidth="35.0" nodeOrientation="INHERIT" pickOnBounds="true">
+                  <image>
+                     <Image url="@menos.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets>
+         </Button>
+         <Pane prefHeight="88.0" prefWidth="153.0" />
+         <RadioButton fx:id="sql" mnemonicParsing="false" onAction="#onsqlbuttonclick" selected="true" text="SQL" />
+         <Pane prefHeight="88.0" prefWidth="38.0" />
+         <RadioButton fx:id="mongo" mnemonicParsing="false" onAction="#onmongobuttonclick" text="MongoDB" />
+         <Pane prefHeight="88.0" prefWidth="166.0" />
+         <Button fx:id="btnewfilm" alignment="CENTER" mnemonicParsing="false" onAction="#onnewfilmbuttonclick" prefHeight="61.0" prefWidth="61.0" style="-fx-background-radius: 5em;">
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets>
+            <graphic>
+               <ImageView fitHeight="35.0" fitWidth="35.0" nodeOrientation="INHERIT" pickOnBounds="true">
+                  <image>
+                     <Image url="@mas.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+         </Button>
+      </children>
+   </HBox>
+</VBox>
